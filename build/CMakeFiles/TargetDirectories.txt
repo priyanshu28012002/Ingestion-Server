@@ -1,0 +1,7 @@
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/ingestion_server.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/edit_cache.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/rebuild_cache.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/list_install_components.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/install.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/install/local.dir
+/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles/install/strip.dir
