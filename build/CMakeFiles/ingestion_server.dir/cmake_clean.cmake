@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ingestion_server.dir/src/server.cpp.o"
   "CMakeFiles/ingestion_server.dir/src/server.cpp.o.d"
-  "bin/ingestion_server"
-  "bin/ingestion_server.pdb"
+  "ingestion_server"
+  "ingestion_server.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

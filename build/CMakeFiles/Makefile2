@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/octo/Desktop/motion_progress/ingestion_server
+CMAKE_SOURCE_DIR = /home/octo/Desktop/motion_progress/Ingestion-Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/octo/Desktop/motion_progress/ingestion_server/build
+CMAKE_BINARY_DIR = /home/octo/Desktop/motion_progress/Ingestion-Server/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ingestion_server.dir/all
+all: CMakeFiles/rtsp_server.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ingestion_server.dir/clean
+clean: CMakeFiles/rtsp_server.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ingestion_server.dir
+# Target rules for target CMakeFiles/rtsp_server.dir
 
 # All Build rule for target.
-CMakeFiles/ingestion_server.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles --progress-num=1,2 "Built target ingestion_server"
-.PHONY : CMakeFiles/ingestion_server.dir/all
+CMakeFiles/rtsp_server.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles --progress-num=1,2 "Built target rtsp_server"
+.PHONY : CMakeFiles/rtsp_server.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ingestion_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ingestion_server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles 0
-.PHONY : CMakeFiles/ingestion_server.dir/rule
+CMakeFiles/rtsp_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rtsp_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 0
+.PHONY : CMakeFiles/rtsp_server.dir/rule
 
 # Convenience name for target.
-ingestion_server: CMakeFiles/ingestion_server.dir/rule
-.PHONY : ingestion_server
+rtsp_server: CMakeFiles/rtsp_server.dir/rule
+.PHONY : rtsp_server
 
 # clean rule for target.
-CMakeFiles/ingestion_server.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/clean
-.PHONY : CMakeFiles/ingestion_server.dir/clean
+CMakeFiles/rtsp_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/clean
+.PHONY : CMakeFiles/rtsp_server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

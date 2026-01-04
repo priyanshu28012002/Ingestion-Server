@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/octo/Desktop/motion_progress/ingestion_server
+CMAKE_SOURCE_DIR = /home/octo/Desktop/motion_progress/Ingestion-Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/octo/Desktop/motion_progress/ingestion_server/build
+CMAKE_BINARY_DIR = /home/octo/Desktop/motion_progress/Ingestion-Server/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -85,56 +85,11 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles /home/octo/Desktop/motion_progress/ingestion_server/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles /home/octo/Desktop/motion_progress/Ingestion-Server/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/ingestion_server/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ingestion_server
+# Target rules for targets named rtsp_server
 
 # Build rule for target.
-ingestion_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ingestion_server
-.PHONY : ingestion_server
+rtsp_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rtsp_server
+.PHONY : rtsp_server
 
 # fast build rule for target.
-ingestion_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/build
-.PHONY : ingestion_server/fast
+rtsp_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/build
+.PHONY : rtsp_server/fast
 
 src/server.o: src/server.cpp.o
 .PHONY : src/server.o
 
 # target to build an object file
 src/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/src/server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.o
 .PHONY : src/server.cpp.o
 
 src/server.i: src/server.cpp.i
@@ -187,7 +142,7 @@ src/server.i: src/server.cpp.i
 
 # target to preprocess a source file
 src/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/src/server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.i
 .PHONY : src/server.cpp.i
 
 src/server.s: src/server.cpp.s
@@ -195,7 +150,7 @@ src/server.s: src/server.cpp.s
 
 # target to generate assembly for a file
 src/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ingestion_server.dir/build.make CMakeFiles/ingestion_server.dir/src/server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.s
 .PHONY : src/server.cpp.s
 
 # Help Target
@@ -205,12 +160,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... ingestion_server"
+	@echo "... rtsp_server"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/octo/Desktop/motion_progress/ingestion_server/include -I/usr/include/gstreamer-1.0 -I/usr/include/orc-0.4 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+CXX_INCLUDES = -I/home/octo/Desktop/motion_progress/Ingestion-Server/include -I/usr/include/gstreamer-1.0 -I/usr/include/orc-0.4 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 
-CXX_FLAGS =  -Wall -Wextra -O2 -pthread -std=gnu++17
+CXX_FLAGS =  -Wall -Wextra -O2 -std=gnu++17
 
