@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rtsp_server
+# Target rules for targets named control_server
 
 # Build rule for target.
-rtsp_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rtsp_server
-.PHONY : rtsp_server
+control_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 control_server
+.PHONY : control_server
 
 # fast build rule for target.
-rtsp_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/build
-.PHONY : rtsp_server/fast
+control_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/build
+.PHONY : control_server/fast
 
-src/server.o: src/server.cpp.o
-.PHONY : src/server.o
+src/https_server.o: src/https_server.cpp.o
+.PHONY : src/https_server.o
 
 # target to build an object file
-src/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
+src/https_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/https_server.cpp.o
+.PHONY : src/https_server.cpp.o
 
-src/server.i: src/server.cpp.i
-.PHONY : src/server.i
+src/https_server.i: src/https_server.cpp.i
+.PHONY : src/https_server.i
 
 # target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
+src/https_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/https_server.cpp.i
+.PHONY : src/https_server.cpp.i
 
-src/server.s: src/server.cpp.s
-.PHONY : src/server.s
+src/https_server.s: src/https_server.cpp.s
+.PHONY : src/https_server.s
 
 # target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rtsp_server.dir/build.make CMakeFiles/rtsp_server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
+src/https_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/https_server.cpp.s
+.PHONY : src/https_server.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... rtsp_server"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
+	@echo "... control_server"
+	@echo "... src/https_server.o"
+	@echo "... src/https_server.i"
+	@echo "... src/https_server.s"
 .PHONY : help
 
 

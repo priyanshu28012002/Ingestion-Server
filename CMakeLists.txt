@@ -2,27 +2,47 @@ cmake_minimum_required(VERSION 3.16)
 project(RTSPStreamingProject)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find required packages
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GSTREAMER REQUIRED gstreamer-1.0 gstreamer-rtsp-server-1.0)
-pkg_check_modules(GSTREAMER_VIDEO REQUIRED gstreamer-video-1.0)
+find_package(OpenSSL REQUIRED)
 
+pkg_check_modules(GSTREAMER REQUIRED
+    gstreamer-1.0
+    gstreamer-rtsp-server-1.0
+)
 
-# Include directories
+pkg_check_modules(GSTREAMER_VIDEO REQUIRED
+    gstreamer-video-1.0
+)
+find_package(Boost REQUIRED COMPONENTS system)
+find_package(OpenSSL REQUIRED)
+pkg_check_modules(SOUP REQUIRED
+    libsoup-3.0
+)
+
 include_directories(
     ${GSTREAMER_INCLUDE_DIRS}
     ${GSTREAMER_VIDEO_INCLUDE_DIRS}
+    ${SOUP_INCLUDE_DIRS}
 )
 
-add_executable(rtsp_server src/server.cpp)
-
-target_include_directories(rtsp_server PRIVATE
-    ${GSTREAMER_INCLUDE_DIRS}
-    ${GSTREAMER_VIDEO_INCLUDE_DIRS}
+add_executable(control_server
+   src/https_server.cpp
+)
+target_link_libraries(control_server
+    Boost::system
+    OpenSSL::SSL
+    OpenSSL::Crypto
+    pthread
 )
 
-target_link_libraries(rtsp_server
+
+target_link_libraries(control_server
     ${GSTREAMER_LIBRARIES}
     ${GSTREAMER_VIDEO_LIBRARIES}
+    ${SOUP_LIBRARIES}
+    OpenSSL::SSL
+    OpenSSL::Crypto
 )
+
