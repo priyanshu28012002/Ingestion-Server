@@ -81,12 +81,12 @@ clean: CMakeFiles/control_server.dir/clean
 CMakeFiles/control_server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles --progress-num=1,2 "Built target control_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles --progress-num=1,2,3 "Built target control_server"
 .PHONY : CMakeFiles/control_server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/control_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/control_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/octo/Desktop/motion_progress/Ingestion-Server/build/CMakeFiles 0
 .PHONY : CMakeFiles/control_server.dir/rule

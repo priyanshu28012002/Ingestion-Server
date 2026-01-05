@@ -26,10 +26,11 @@ include_directories(
     ${GSTREAMER_VIDEO_INCLUDE_DIRS}
     ${SOUP_INCLUDE_DIRS}
 )
-
 add_executable(control_server
-   src/https_server.cpp
+    src/https_server.cpp
+    src/logger.cpp
 )
+
 target_link_libraries(control_server
     Boost::system
     OpenSSL::SSL
@@ -37,6 +38,18 @@ target_link_libraries(control_server
     pthread
 )
 
+target_include_directories(control_server
+    PRIVATE
+        ${PROJECT_NAME}/include
+        ${GSTREAMER_INCLUDE_DIRS}
+        ${GSTREAMER_VIDEO_INCLUDE_DIRS}
+        ${SOUP_INCLUDE_DIRS}
+)
+
+include_directories(
+  include
+
+)
 
 target_link_libraries(control_server
     ${GSTREAMER_LIBRARIES}
