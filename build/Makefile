@@ -225,6 +225,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/pipeline_manager.o: src/pipeline_manager.cpp.o
+.PHONY : src/pipeline_manager.o
+
+# target to build an object file
+src/pipeline_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/pipeline_manager.cpp.o
+.PHONY : src/pipeline_manager.cpp.o
+
+src/pipeline_manager.i: src/pipeline_manager.cpp.i
+.PHONY : src/pipeline_manager.i
+
+# target to preprocess a source file
+src/pipeline_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/pipeline_manager.cpp.i
+.PHONY : src/pipeline_manager.cpp.i
+
+src/pipeline_manager.s: src/pipeline_manager.cpp.s
+.PHONY : src/pipeline_manager.s
+
+# target to generate assembly for a file
+src/pipeline_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/pipeline_manager.cpp.s
+.PHONY : src/pipeline_manager.cpp.s
+
+src/video_pipeline.o: src/video_pipeline.cpp.o
+.PHONY : src/video_pipeline.o
+
+# target to build an object file
+src/video_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/video_pipeline.cpp.o
+.PHONY : src/video_pipeline.cpp.o
+
+src/video_pipeline.i: src/video_pipeline.cpp.i
+.PHONY : src/video_pipeline.i
+
+# target to preprocess a source file
+src/video_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/video_pipeline.cpp.i
+.PHONY : src/video_pipeline.cpp.i
+
+src/video_pipeline.s: src/video_pipeline.cpp.s
+.PHONY : src/video_pipeline.s
+
+# target to generate assembly for a file
+src/video_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_server.dir/build.make CMakeFiles/control_server.dir/src/video_pipeline.cpp.s
+.PHONY : src/video_pipeline.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,6 +294,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/pipeline_manager.o"
+	@echo "... src/pipeline_manager.i"
+	@echo "... src/pipeline_manager.s"
+	@echo "... src/video_pipeline.o"
+	@echo "... src/video_pipeline.i"
+	@echo "... src/video_pipeline.s"
 .PHONY : help
 
 

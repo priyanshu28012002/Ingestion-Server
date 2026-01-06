@@ -31,6 +31,8 @@ add_executable(control_server
     src/logger.cpp
     src/main.cpp
     src/camera.cpp
+    src/video_pipeline.cpp
+    src/pipeline_manager.cpp
 )
 
 target_link_libraries(control_server
