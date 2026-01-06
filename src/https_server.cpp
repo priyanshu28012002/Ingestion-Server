@@ -9,6 +9,7 @@
 #include <boost/asio/ssl.hpp>
 #include "logger.hpp"
 
+
 namespace beast = boost::beast;
 namespace http = beast::http;
 namespace net = boost::asio;
@@ -60,19 +61,4 @@ public:
 };
 
 
-#include "logger.hpp"
-#include <iostream>
 
-int main() {
-
-    
-    LOG_DEBUG("This is a debug message");
-    LOG_INFO("Application started successfully");
-    LOG_WARNING("Disk space is low");
-    LOG_ERROR("Failed to open configuration file");
-    LOG_CRITICAL("System shutdown required!");
-    
-    std::cout << "Test completed. Check 'myapp.log' for file output." << std::endl;
-    
-    return 0;
-}

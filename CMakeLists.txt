@@ -29,6 +29,8 @@ include_directories(
 add_executable(control_server
     src/https_server.cpp
     src/logger.cpp
+    src/main.cpp
+    src/camera.cpp
 )
 
 target_link_libraries(control_server

@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <sstream>
 
-// Initialize static members
+
 Logger* Logger::instance_ = nullptr;
 std::mutex Logger::mtx_;
 
@@ -14,7 +14,7 @@ Logger::Logger()
     : current_level_(Level::INFO),
       log_to_console_(true)
 {
-    // ALWAYS use std::ios::app to append to existing file
+    
     log_file_.open("application.log", std::ios::app);
     
     if (!log_file_.is_open()) {
@@ -54,7 +54,7 @@ void Logger::set_log_file(const std::string& filename) {
         log_file_.close();
     }
     
-    // ALWAYS use std::ios::app to append to existing file
+
     log_file_.open(filename, std::ios::app);
     
     if (!log_file_.is_open()) {
@@ -68,7 +68,7 @@ std::string Logger::get_current_timestamp() {
     auto now = std::chrono::system_clock::now();
     std::time_t now_c = std::chrono::system_clock::to_time_t(now);
     
-    // Get milliseconds
+
     auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
         now.time_since_epoch()) % 1000;
     
@@ -96,17 +96,17 @@ void Logger::log(Level level, const std::string& message,
                  const std::string& file, int line) {
     std::lock_guard<std::mutex> lock(mtx_);
     
-    // Check log level
+
     if (level < current_level_) {
         return;
     }
     
-    // Build log entry
+
     std::stringstream ss;
     ss << get_current_timestamp() 
        << " [" << level_to_string(level) << "] ";
     
-    // Add file location (if provided)
+
     if (!file.empty()) {
         size_t pos = file.find_last_of("/\\");
         std::string filename = (pos != std::string::npos) ? 
@@ -118,7 +118,7 @@ void Logger::log(Level level, const std::string& message,
     
     std::string log_entry = ss.str();
     
-    // Output to console
+
     if (log_to_console_) {
         if (level == Level::ERROR || level == Level::CRITICAL) {
             std::cerr << "\033[1;31m" << log_entry << "\033[0m" << std::endl;
@@ -129,14 +129,14 @@ void Logger::log(Level level, const std::string& message,
         }
     }
     
-    // Output to file (APPENDS automatically because of std::ios::app)
+
     if (log_file_.is_open()) {
         log_file_ << log_entry << std::endl;
-        log_file_.flush();  // Ensure it's written immediately
+        log_file_.flush(); 
     }
 }
 
-// Public log methods
+
 void Logger::debug(const std::string& message, 
                    const std::string& file, int line) {
     log(Level::DEBUG, message, file, line);

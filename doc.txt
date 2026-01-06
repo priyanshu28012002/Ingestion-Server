@@ -1,0 +1,32 @@
+gst_element_set_state
+gst_object_unref
+gst_element_set_state
+gst_object_unref
+GstElement *pipeline   = gst_pipeline_new((name + "pipeline").toUtf8().constData());
+    GstElement *source     = gst_element_factory_make("rtspsrc",       (name + "source").toUtf8().constData());
+    GstElement *depay      = gst_element_factory_make("rtph265depay",  (name + "depay").toUtf8().constData());
+    GstElement *queue_net  = gst_element_factory_make("queue", (name + "queue_net").toUtf8().constData());
+    GstElement *parse      = gst_element_factory_make("h265parse",     (name + "parse").toUtf8().constData());
+    GstElement *decoder    = gst_element_factory_make("decodebin",     (name + "decoder").toUtf8().constData());
+    GstElement *queue      = gst_element_factory_make("queue",         (name + "queue").toUtf8().constData());
+    GstElement *convert    = gst_element_factory_make("videoconvert",  (name + "convert").toUtf8().constData());
+    GstElement *scale      = gst_element_factory_make("videoscale",    (name + "scale").toUtf8().constData());
+    GstElement *capsfilter = gst_element_factory_make("capsfilter",    (name + "capsfilter").toUtf8().constData());
+    GstElement *appsink    = gst_element_factory_make("appsink",       (name + "appsink").toUtf8().constData());
+    GstElement *rate      = gst_element_factory_make("videorate",    (name + "rate").toUtf8().constData());
+
+    // ============ NEW: TEE + RECORDING BRANCH ELEMENTS ============
+    GstElement *tee           = gst_element_factory_make("tee",           (name + "tee").toUtf8().constData());
+    GstElement *queue_live    = gst_element_factory_make("queue",         (name + "queue_live").toUtf8().constData());
+    GstElement *queue_record  = gst_element_factory_make("queue",         (name + "queue_record").toUtf8().constData());
+    GstElement *valve_rec     = gst_element_factory_make("valve",         (name + "valve_rec").toUtf8().constData());  // Control data flow
+    GstElement *convert_rec   = gst_element_factory_make("videoconvert",  (name + "convert_rec").toUtf8().constData());
+    GstElement *scale_rec     = gst_element_factory_make("videoscale",    (name + "scale_rec").toUtf8().constData());
+    GstElement *rate_rec      = gst_element_factory_make("videorate",     (name + "rate_rec").toUtf8().constData());   // Variable FPS for motion (after convert/scale)
+    GstElement *caps_rec      = gst_element_factory_make("capsfilter",    (name + "caps_rec").toUtf8().constData());
+    GstElement *encoder       = gst_element_factory_make("nvh265enc",     (name + "encoder").toUtf8().constData());
+    GstElement *parse_enc     = gst_element_factory_make("h265parse",     (name + "parse_enc").toUtf8().constData());
+    GstElement *muxer         = gst_element_factory_make("matroskamux",   (name + "muxer").toUtf8().constData());
+    GstElement *fakesink      = gst_element_factory_make("fakesink",      (name + "fakesink").toUtf8().constData());
+
+    g_object_set
