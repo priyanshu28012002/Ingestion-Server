@@ -1,5 +1,6 @@
 #include "pipeline_manager.hpp"
 #include "video_pipeline.hpp"
+#include "app_setting.hpp"
 
 PipelineManager::PipelineManager() {
     gst_init(nullptr, nullptr);
@@ -20,6 +21,7 @@ void PipelineManager::run() {
     }
     g_main_loop_run(loop_);
 }
+
 
 void PipelineManager::stop() {
     for (auto& pipeline : pipelines_) {

@@ -1,0 +1,6 @@
+Simpal qt application were i can test the CameraName
+
+qt applicaion work Flow
+1 load the qt_rtsp_path.json
+2 make the Drop down the Camera name
+3 if We select the camera name show the stream with the qt_rtsp_path

@@ -1,0 +1,5 @@
+{
+  "CameraId": "1",
+  "CameraName":"Parking",
+  "QtRtspPath":"rtsp://192.168.1.3:554/cam1/"
+}
