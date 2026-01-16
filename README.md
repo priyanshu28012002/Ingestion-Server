@@ -1,16 +1,6 @@
 # Ingestion-Server
-Ingestion Server Is G streamer Video Server
-# RTSP Video Streaming Server - Complete Guide
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Installation](#installation)
-3. [Code Walkthrough](#code-walkthrough)
-4. [Pipeline Configuration](#pipeline-configuration)
-5. [Stream Tuning Guide](#stream-tuning-guide)
-6. [Debugging Guide](#debugging-guide)
-7. [Client Testing](#client-testing)
-8. [Troubleshooting](#troubleshooting)
+
 
 ## Overview
 
@@ -33,11 +23,6 @@ sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
     libgstrtspserver-1.0-dev gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
     gstreamer1.0-libav gstreamer1.0-tools
-
-# Fedora
-sudo dnf install gstreamer1-devel gstreamer1-plugins-base-devel \
-    gstreamer1-rtsp-server-devel gstreamer1-plugins-good \
-    gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free
 ```
 
 ### Compilation
