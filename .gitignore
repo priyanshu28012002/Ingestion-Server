@@ -29,3 +29,12 @@ Makefile
 # System files
 .DS_Store
 Thumbs.db
+
+# Documentation
+
+doc/
+*/doc/
+*/*/doc/
+**/doc/
+doc*/
+**/doc*/

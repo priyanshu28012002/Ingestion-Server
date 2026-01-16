@@ -3,8 +3,26 @@
 
 #include <string>
 
+
+// camera.hpp
+/**
+ * @class Camera
+ * @brief Represents a camera device for video capture
+ * 
+ * This class handles camera initialization, frame capture,
+ * and stream management.
+ */
+
 class Camera {
 public:
+
+  /**
+     * @brief Construct a new Camera object
+     * @param camera_id Camera device ID (0 for default)
+     * @param width Frame width
+     * @param height Frame height
+     * @throw std::runtime_error if camera cannot be opened
+     */
     Camera(int id,
            const std::string& name,
            const std::string& sourceUri,

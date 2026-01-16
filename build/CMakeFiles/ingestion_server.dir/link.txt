@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -O2 CMakeFiles/ingestion_server.dir/src/server.cpp.o -o ingestion_server 

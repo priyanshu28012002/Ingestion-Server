@@ -1,7 +1,26 @@
+/**
+ * @file video_pipeline.cpp
+ * @brief Implementation of VideoPipeline class
+ * @author Priyanshu Srivastava
+ * @date 2025-01-15
+ * @version 1.3.0.3
+ */
+
+
 #include "video_pipeline.hpp"
 #include <iostream>
 #include <gst/rtsp/gstrtsptransport.h>
 
+
+
+/**
+ * @brief VideoPipeline constructor implementation
+ * @details Loads configuration from JSON file and initializes
+ * internal components.
+ * 
+ * @note Configuration file must contain camera settings and
+ * streaming parameters.
+ */
 VideoPipeline::VideoPipeline(const Camera &camera)
     : camera_(camera) {}
 
@@ -62,6 +81,27 @@ void VideoPipeline::on_pad_added(GstElement *src, GstPad *pad, gpointer data)
     gst_object_unref(sink_pad);
 }
 
+/**
+ * @brief Start a video stream
+ * @details Creates encoder, muxer, and server components for
+ * the specified stream.
+ * 
+ * @param stream_name Unique identifier for the stream
+ * @return Stream ID that can be used to control the stream
+ * 
+ * @throw std::invalid_argument if stream_name is empty
+ * @throw std::runtime_error if stream cannot be created
+ * 
+ * @code
+ * VideoPipeline pipeline("config.json");
+ * int stream_id = pipeline.start_stream("camera1");
+ * if (stream_id >= 0) {
+ *     // Stream started successfully
+ * }
+ * @endcode
+ */
+
+ 
 bool VideoPipeline::start()
 {
     if (!create_elements() || !link_elements())

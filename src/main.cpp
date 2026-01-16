@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @brief Entry Point of the server
+ * @author Priyanshu Srivastava
+ * @date 2024-01-15
+ * @version 1.0
+ */
+
+
+
 #include <memory>
 #include <vector>
 
@@ -5,6 +15,15 @@
 #include "video_pipeline.hpp"
 #include "pipeline_manager.hpp"
 #include "logger.hpp"
+
+
+/**
+ * @brief Main function to Entry Point
+ * @param argc Number of command line arguments
+ * @param argv Array of command line arguments
+ * @return int Exit status (0 for success)
+ */
+
 
 int main(int argc, char *argv[])
 {
