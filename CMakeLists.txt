@@ -33,6 +33,9 @@ add_executable(control_server
     src/camera.cpp
     src/video_pipeline.cpp
     src/pipeline_manager.cpp
+    src/camerasSettings.cpp
+    config/config.hpp
+    src/streamManager.cpp
 )
 
 target_link_libraries(control_server
@@ -52,6 +55,7 @@ target_include_directories(control_server
 
 include_directories(
   include
+  config
 
 )
 

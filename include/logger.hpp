@@ -16,7 +16,6 @@ public:
         CRITICAL
     };
 
-    // 获取单例实例
     static Logger* get_instance();
 
     // 删除拷贝构造函数和赋值运算符

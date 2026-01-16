@@ -1,6 +1,5 @@
 #include "pipeline_manager.hpp"
 #include "video_pipeline.hpp"
-#include "app_setting.hpp"
 
 namespace PipelineConfig
 {
@@ -27,7 +26,6 @@ enum class SourceType
 PipelineManager::PipelineManager()
 {
     // Initialize GStreamer library
-
     gst_init(nullptr, nullptr);
     // Create and run GLib main loop
     // This keeps the server running and handles all RTSP client connections
