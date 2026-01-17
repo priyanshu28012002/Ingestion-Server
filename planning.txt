@@ -1,0 +1,9 @@
+mmap to read the company RTSP URL
+mmap to save the NEW URL
+
+
+
+
+
+/ Signal Handelling 
+/ Server Lifetime management
