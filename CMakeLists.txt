@@ -27,15 +27,18 @@ include_directories(
     ${SOUP_INCLUDE_DIRS}
 )
 add_executable(control_server
-    src/https_server.cpp
-    src/logger.cpp
+    src/core/logger.cpp
+    src/core/camera.cpp
+    src/core/pipeline.cpp
+
+    src/manager/pipelineManager.cpp
+    src/manager/cameraManager.cpp
+    src/manager/streamManager.cpp
+
     src/main.cpp
-    src/camera.cpp
-    src/video_pipeline.cpp
-    src/pipeline_manager.cpp
-    src/camerasSettings.cpp
+
     config/config.hpp
-    src/streamManager.cpp
+
 )
 
 target_link_libraries(control_server

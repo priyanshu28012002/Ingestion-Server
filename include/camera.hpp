@@ -12,6 +12,16 @@
  * and stream management.
  */
 
+enum class SourceType
+{
+    WEBCAMERA,
+    FILE,
+    RTSP,
+    SCREENCAPTURE,
+    TEST
+};
+
+
 class Camera
 {
 public:
