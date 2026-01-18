@@ -17,4 +17,4 @@ public:
     const std::vector<std::string> &getURLs() const;
 
     void printURLs() const;
-}
+};

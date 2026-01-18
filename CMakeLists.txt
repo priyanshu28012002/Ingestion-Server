@@ -31,6 +31,7 @@ add_executable(control_server
     src/core/camera.cpp
     src/core/pipeline.cpp
     src/core/fileio.cpp
+    src/core/urlLoader.cpp
 
     src/manager/pipelineManager.cpp
     src/manager/cameraManager.cpp

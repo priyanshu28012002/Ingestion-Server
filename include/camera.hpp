@@ -52,6 +52,7 @@ private:
     std::string companyName_;
     std::string proxyUrl_;
     bool isMicrophone_;
+    void setProxyUrl();
 };
 
 #endif // CAMERA_HPP

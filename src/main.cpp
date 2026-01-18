@@ -13,6 +13,7 @@
 #include <config.hpp>
 #include <streamManager.hpp>
 #include <fileio.hpp>
+#include <cameraManager.hpp>
 
 /**
  * @brief Main function to Entry Point
@@ -21,18 +22,25 @@
  * @return int Exit status (0 for success)
  */
 
-
 int main(int argc, char *argv[])
 {
     try
     {
 
-        FileIO fileio("/home/octo/Desktop/motion_progress/Ingestion-Server/planning.txt");
-        
+        // FileIO fileio("/home/octo/Desktop/motion_progress/Ingestion-Server/planning.txt");
+
+        CamerasSettings cs;
+        cs.LoadCameras("/home/octo/Desktop/motion_progress/Ingestion-Server/config/company_rtsp_path.txt");
+        cs.initCameras();
+        auto cams = cs.getCameras();
+        for(auto x: cams){
+            
+            std::cout<<x.getProxyUrl()<<std::endl;
+        }
+
         // std::unique_ptr<StreamManager> stream_manager_;
         // std::unique_ptr<Config> config_;
 
-        
         // Logger::get_instance()->set_log_level(Logger::Level::INFO);
 
         // LOG_INFO("Starting RTSP Proxy System");
@@ -51,10 +59,9 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-
 /*
 
-Lifeline Management 
+Lifeline Management
 Signal Handeling
 
 */
