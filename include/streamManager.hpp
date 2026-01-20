@@ -18,7 +18,7 @@ private:
     GstRTSPMountPoints *mounts = nullptr;
     GMainLoop *loop = nullptr;
     
-    std::unique_ptr<CamerasSettings> cameras_settings_;
+    std::unique_ptr<CamerasSettings> cameras_manager_;
     std::unique_ptr<PipelineManager> pipeline_manager_;
 
     void stop();
@@ -26,7 +26,7 @@ private:
 public:
     StreamManager(/* args */);
     ~StreamManager();
-    void InitStreamer(int argc, char *argv[]);
+    void InitStreamer();
     GstRTSPServer *getRstpServer();
     GstRTSPMountPoints *getRtspMountPoints();
 
@@ -39,6 +39,9 @@ public:
 
     bool createGlibMainLoop();
     bool runGLibMainLoop();
+    
+    
+    void initGstreamer();
 
 };
 

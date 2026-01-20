@@ -10,6 +10,8 @@ bool CamerasSettings::LoadCameras(std::string old_rtsp_path)
 
 void CamerasSettings::initCameras()
 {
+    // What if we wont have any old Rtsp Path 
+    // What if we Wont call LoadCamera
     int oldRtspPathCount = oldRtspPaths.size();
 
     std::cout << oldRtspPathCount << std::endl;

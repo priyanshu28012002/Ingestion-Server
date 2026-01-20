@@ -5,12 +5,23 @@
 
 StreamManager::StreamManager(/* args */)
 {
-    std::cout << "hi";
 }
 
-void StreamManager::InitStreamer(int argc, char *argv[])
+void StreamManager::InitStreamer()
 {
-    gst_init(&argc, &argv);
+    initGstreamer();
+    getRstpServer();
+    setRtspServerPort(9000);
+    getRtspMountPoints();
+    // cameras_manager_->LoadCameras();
+    // cameras_manager_->initCameras();
+    pipeline_manager_->initPipeline();
+    pipeline_manager_->add_pipeline(mounts);
+    cleanUpMountPoints();
+    attachServer();
+    createGlibMainLoop();
+    // runGLibMainLoop();
+
 }
 
 StreamManager::~StreamManager()
@@ -18,10 +29,20 @@ StreamManager::~StreamManager()
     stop();
 }
 
+void StreamManager::initGstreamer()
+{
+ gst_init(nullptr, nullptr);
+}
+
+
 GstRTSPServer *StreamManager::getRstpServer()
 {
-    if (server == nullptr)
+    if (server != nullptr)
     {
+        std::cout<<"All ready Have the server Ptr"<<std::endl;
+        return server;
+    }
+
         server = gst_rtsp_server_new();
 
         if (!server)
@@ -29,7 +50,8 @@ GstRTSPServer *StreamManager::getRstpServer()
             g_printerr("Failed to create RTSP server\n");
             return nullptr;
         }
-    }
+    
+        std::cout<<"Created the server Ptr"<<std::endl;
 
     return server;
 }

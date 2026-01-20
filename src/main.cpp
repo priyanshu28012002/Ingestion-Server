@@ -29,20 +29,18 @@ int main(int argc, char *argv[])
 
         // FileIO fileio("/home/octo/Desktop/motion_progress/Ingestion-Server/planning.txt");
 
-        CamerasSettings cs;
-        cs.LoadCameras("/home/octo/Desktop/motion_progress/Ingestion-Server/config/company_rtsp_path.txt");
-        cs.initCameras();
-        auto cams = cs.getCameras();
-        for(auto x: cams){
-            
-            std::cout<<x.getProxyUrl()<<std::endl;
-        }
+        // CamerasSettings cs;
+        // cs.LoadCameras("/home/octo/Desktop/motion_progress/Ingestion-Server/config/company_rtsp_path.txt");
+        // cs.initCameras();
+        // auto cams = cs.getCameras();
+        // Declares a smart pointer.
+        std::unique_ptr<StreamManager> stream_manager_;
+        stream_manager_ = std::make_unique<StreamManager>();
 
-        // std::unique_ptr<StreamManager> stream_manager_;
         // std::unique_ptr<Config> config_;
 
         // Logger::get_instance()->set_log_level(Logger::Level::INFO);
-
+        stream_manager_->InitStreamer();
         // LOG_INFO("Starting RTSP Proxy System");
 
         // stream_manager_->InitStreamer(argc, argv);
