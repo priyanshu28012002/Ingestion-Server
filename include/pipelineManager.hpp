@@ -12,7 +12,9 @@ public:
 
     
 // void add_pipeline(std::unique_ptr<VideoPipeline> pipeline);
-void add_pipeline(GstRTSPMountPoints *mounts);
+void add_pipeline(GstRTSPMountPoints *mounts,  GstRTSPMediaFactory * factory);
+void register_all_camera_mounts(GstRTSPMountPoints *mounts , std::vector<Camera> cams);
+
 
 void initPipeline();
 

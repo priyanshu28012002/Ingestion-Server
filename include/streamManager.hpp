@@ -9,15 +9,13 @@
 #include "cameraManager.hpp"
 #include "pipelineManager.hpp"
 
-
-
 class StreamManager
 {
 private:
     GstRTSPServer *server = nullptr;
     GstRTSPMountPoints *mounts = nullptr;
     GMainLoop *loop = nullptr;
-    
+
     std::unique_ptr<CamerasSettings> cameras_manager_;
     std::unique_ptr<PipelineManager> pipeline_manager_;
 
@@ -39,10 +37,8 @@ public:
 
     bool createGlibMainLoop();
     bool runGLibMainLoop();
-    
-    
-    void initGstreamer();
 
+    void initGstreamer();
 };
 
 bool initCamera(std::string &OldRtspPath);

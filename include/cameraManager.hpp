@@ -20,7 +20,7 @@ public:
 
     bool LoadCameras( std::string old_rtsp_path);
     void initCameras();
-    std::vector<Camera> &getCameras();
+    std::vector<Camera> getCameras();
     Camera getCamera(size_t index);
     size_t getCameraCount();
 };

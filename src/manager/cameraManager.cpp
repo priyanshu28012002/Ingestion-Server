@@ -29,7 +29,7 @@ Camera CamerasSettings::getCamera(size_t index)
     return cameras_[index];
 }
 
-std::vector<Camera> &CamerasSettings::getCameras()
+std::vector<Camera> CamerasSettings::getCameras()
 {
     return cameras_;
 }

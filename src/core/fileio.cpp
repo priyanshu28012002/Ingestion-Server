@@ -154,7 +154,6 @@ FileIO::FileIO(const std::string &sourceFile) : _source_file(sourceFile)
     }
 }
 
-// Destructor - ensures proper cleanup
 FileIO::~FileIO()
 {
     cleanup();

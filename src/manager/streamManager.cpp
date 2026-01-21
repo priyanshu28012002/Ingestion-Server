@@ -5,6 +5,9 @@
 
 StreamManager::StreamManager(/* args */)
 {
+pipeline_manager_ = std::make_unique<PipelineManager>();
+cameras_manager_  = std::make_unique<CamerasSettings>();
+
 }
 
 void StreamManager::InitStreamer()
@@ -13,14 +16,15 @@ void StreamManager::InitStreamer()
     getRstpServer();
     setRtspServerPort(9000);
     getRtspMountPoints();
-    // cameras_manager_->LoadCameras();
-    // cameras_manager_->initCameras();
-    pipeline_manager_->initPipeline();
-    pipeline_manager_->add_pipeline(mounts);
+    cameras_manager_->LoadCameras("/home/octo/Desktop/motion_progress/Ingestion-Server/config/test_rtps_path.txt");
+    cameras_manager_->initCameras();
+    // pipeline_manager_->initPipeline();
+    auto cams = cameras_manager_->getCameras();
+    pipeline_manager_->register_all_camera_mounts(mounts,cams);
     cleanUpMountPoints();
     attachServer();
     createGlibMainLoop();
-    // runGLibMainLoop();
+    runGLibMainLoop();
 
 }
 
@@ -33,7 +37,6 @@ void StreamManager::initGstreamer()
 {
  gst_init(nullptr, nullptr);
 }
-
 
 GstRTSPServer *StreamManager::getRstpServer()
 {
@@ -152,10 +155,13 @@ bool StreamManager::createGlibMainLoop()
 {
     loop = g_main_loop_new(NULL, FALSE);
 }
+
 bool StreamManager::runGLibMainLoop()
 {
     g_main_loop_run(loop);
 }
+
+
 
 void StreamManager::stop()
 {
